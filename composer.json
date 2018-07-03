@@ -1,6 +1,6 @@
 {
   "name": "silvesterk/business-days",
-  "description": "A simpel helper class used for calculating business days",
+  "description": "A simple helper class used for calculating business days",
   "license": "MIT",
   "require": {
     "php": "^7.2"
