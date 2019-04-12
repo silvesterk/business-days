@@ -31,8 +31,24 @@ class Test extends TestCase
     {
         $businessDays = new BusinessDays();
         $days = $businessDays->getBusinessDayNumberFromRange($dateRange);
-        // This is hardcoded it is 3903 days trust me
-        $this->assertEquals(3903, $days);
+        // This is hardcoded it is 3902 days trust me
+        $this->assertEquals(3902, $days);
+    }
+
+    public function testGetBusinessDaysForMarch2019()
+    {
+        $shouldHaveDays = 21;
+        $businessDays = new BusinessDays();
+        $days = $businessDays->getBusinessDayNumberFromRange(new DateRange('2019-03-01', '2019-03-31'));
+        $this->assertEquals($shouldHaveDays, $days);
+    }
+
+    public function testRandomBusinessDay()
+    {
+        $shouldHaveDays = 2;
+        $businessDays = new BusinessDays();
+        $days = $businessDays->getBusinessDayNumberFromRange(new DateRange('2019-03-01', '2019-03-04'));
+        $this->assertEquals($shouldHaveDays, $days);
     }
 
     public function testIsWeekend()
