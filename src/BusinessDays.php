@@ -30,7 +30,19 @@ class BusinessDays
         '2018-04-06',
         '2018-04-09',
         '2018-05-01',
-        '2018-05-02'
+        '2018-05-02',
+        '2019-01-01',
+        '2019-01-02',
+        '2019-01-07',
+        '2019-02-15',
+        '2019-02-16',
+        '2019-04-26',
+        '2019-04-27',
+        '2019-04-28',
+        '2019-04-29',
+        '2019-05-01',
+        '2019-05-02',
+        '2019-11-11',
     );
 
     /**
@@ -55,9 +67,9 @@ class BusinessDays
     public function getBusinessDayNumberFromRange(DateRange $dateRange)
     {
         $startDate = $dateRange->getFrom();
-        $endDate = $dateRange->getTo();
+        $endDate = $dateRange->getTo()->modify('+1 day');
 
-        $dayDifference = $startDate->diff($endDate)->days + 1;
+        $dayDifference = $startDate->diff($endDate)->days;
 
         $weekDifference = floor($dayDifference / 7);
         $numberOfRemainingDays = fmod($dayDifference, 7);
