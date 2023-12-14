@@ -3,7 +3,7 @@
   "description": "A simple helper class used for calculating business days",
   "license": "MIT",
   "require": {
-    "php": "^7.2"
+    "php": "^7.2||^8.0"
   },
   "autoload": {
     "psr-4": {
@@ -16,6 +16,6 @@
     }
   },
   "require-dev": {
-    "phpunit/phpunit": "^7.2"
+    "phpunit/phpunit": "^7.2||^9.0"
   }
 }
